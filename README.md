@@ -23,6 +23,7 @@ Following is a simple example for using spring-data-aerospike.
 
 1. Create an entity class which needs to be persisted in aerospike db
 
+
 	import java.io.Serializable;
 	import java.util.HashMap;
 	import java.util.Map;
@@ -30,7 +31,6 @@ Following is a simple example for using spring-data-aerospike.
 	import org.springframework.data.aerospike.annotations.AerospikeIndex;
 	import org.springframework.data.aerospike.annotations.AerospikeKey;
 	import com.aerospike.client.query.IndexType;
-
 	@AerospikeEntity(nameSpace = "test", setName = "test")
 	public class Entity implements Serializable {
 		@AerospikeKey
@@ -83,13 +83,13 @@ If user name and password is not required it can be left blank.
 	
 4. Create a basic applicationContext.xml file to enable annotation driven spring usage
 
+
 	<?xml  version="1.0" encoding="UTF-8"?>
 	<beans xmlns="http://www.springframework.org/schema/beans"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 		xmlns:context="http://www.springframework.org/schema/context"
 		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	                        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-	
 		<context:annotation-config />
 		<context:spring-configured />
 		<context:component-scan base-package="org.springframework.data.aerospike" />
@@ -105,10 +105,8 @@ If user name and password is not required it can be left blank.
 	import org.springframework.data.aerospike.client.Client;
 	import org.springframework.data.aerospike.exceptions.AerospikeException;
 	import org.springframework.data.aerospike.operations.AerospikeOperations;
-
 	public class Test {
 		private static final Logger	LOGGER	= LoggerFactory.getLogger(Test.class);
-	
 		public static void main(String[] args) {
 			ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
 			Client client = applicationContext.getBean(Client.class);
@@ -138,4 +136,4 @@ If user name and password is not required it can be left blank.
 
 ### Notes
 
-For any issues please report at [here](fanendranath.tripathi@gmail.com).
+For any issues please report at fanendranath.tripathi@gmail.com
