@@ -23,7 +23,6 @@ Following is a simple example for using spring-data-aerospike.
 
 1. Create an entity class which needs to be persisted in aerospike db
 
-
 	import java.io.Serializable;
 	import java.util.HashMap;
 	import java.util.Map;
@@ -83,7 +82,6 @@ If user name and password is not required it can be left blank.
 	
 4. Create a basic applicationContext.xml file to enable annotation driven spring usage
 
-
 	<?xml  version="1.0" encoding="UTF-8"?>
 	<beans xmlns="http://www.springframework.org/schema/beans"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -94,7 +92,7 @@ If user name and password is not required it can be left blank.
 		<context:spring-configured />
 		<context:component-scan base-package="org.springframework.data.aerospike" />
 	</beans>
-
+	
 5. Finally create a Test class
 
 	import java.util.UUID;
