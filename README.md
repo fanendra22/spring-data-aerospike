@@ -21,7 +21,7 @@ with required dependencies.
 
 Following is a simple example for using spring-data-aerospike.
 
-1. Create an entity class which needs to be persisted in aerospike db
+Create an entity class which needs to be persisted in aerospike db
 
 	import java.io.Serializable;
 	import java.util.HashMap;
@@ -72,7 +72,7 @@ Following is a simple example for using spring-data-aerospike.
 		}
 	}
 	
-3. Create a file with name aerospike.config and put in classpath. It should have at least aerospike db configuration details. Following is the minimal data in needed 
+Create a file with name aerospike.config and put in classpath. It should have at least aerospike db configuration details. Following is the minimal data in needed 
 
 	aerospike.hosts=localhost:3000
 	aerospike.user=<user-name>
@@ -80,7 +80,7 @@ Following is a simple example for using spring-data-aerospike.
 	
 If user name and password is not required it can be left blank.
 	
-4. Create a basic applicationContext.xml file to enable annotation driven spring usage
+Create a basic applicationContext.xml file to enable annotation driven spring usage
 
 	<?xml  version="1.0" encoding="UTF-8"?>
 	<beans xmlns="http://www.springframework.org/schema/beans"
@@ -93,7 +93,7 @@ If user name and password is not required it can be left blank.
 		<context:component-scan base-package="org.springframework.data.aerospike" />
 	</beans>
 	
-5. Finally create a Test class
+Finally create a Test class
 
 	import java.util.UUID;
 	import org.slf4j.Logger;
