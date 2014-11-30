@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" >
+<log4j:configuration>
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} %X{requestId} [%t] %-5p %c %x - %m%n" />
+		</layout>
+	</appender>
+	<appender name="ASYNC" class="org.apache.log4j.AsyncAppender">
+		<param name="BufferSize" value="1024" />
+		<appender-ref ref="stdout" />
+	</appender>
+	<logger name="org.springframework.data.aerospike.logger" additivity="false">
+		<level value="debug" />
+		<appender-ref ref="ASYNC" />
+	</logger>
+	<root>
+		<priority value="debug"></priority>
+		<appender-ref ref="ASYNC" />
+	</root>
+</log4j:configuration>
